@@ -1,19 +1,28 @@
-body {
-  font-family: Arial, sans-serif;
-  padding: 20px;
-  background-color: #f7f7f7;
-}
-/* Nav */
+/* fuente */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+
+body {
+  font-family: 'Poppins', 'Times New Roman';
+  padding: 0;
+  background-color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Nav */
 .contenedor {
-    width: fit-content;
-    margin: auto;
+  width: fit-content;
+  margin: 0 auto;
+  padding: 5px;
 }
 
 nav {
-  background-color: #4949b4;
-  padding: 10px;
+  background-color: #c19875;
+  padding: 5px;
   margin-bottom: 20px;
+  text-align: left;
 }
 
 nav a {
@@ -21,12 +30,83 @@ nav a {
   text-decoration: none;
   padding: 8px 16px;
   margin: auto;
+  border-radius: 5px;
+  transition: 0.5s;
 }
 
 nav a:hover {
-  background-color: #d9d9d9;
-  color: #000000;
+  background-color: #f2e3bc;
+  color: #414535;
 }
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown > a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: 0.5s;
+  display: inline-block;
+}
+
+.dropdown > a:hover {
+  background-color: #f2e3bc;
+  color: #414535;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #c19875;
+  border-radius: 5px;
+  min-width: 200px;
+  padding: 6px;
+  z-index: 100;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 12px;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f2e3bc;
+  color: #414535;
+}
+
+/* Info */
+.contenedor-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 5px auto;
+  padding: 0 20px;
+}
+
+.contenedor-info img {
+  width: 350px;
+  height: 510px;
+  border-radius: 10px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
 
 /* Titulos */
 h1 {
@@ -38,11 +118,16 @@ h2{
   text-align: center;
 }
 
+.subtitulo-info {
+  text-align: left;
+}
+
 /* Tabla */
 table {
   border-collapse: collapse;
-  width: auto;
-  margin: auto;
+  padding: 0 0 0 0;
+  width: fit-content;
+  margin: 0 auto;
 }
 
 th, td {
@@ -55,52 +140,66 @@ th, td {
 
 /* Encabezados */
 th {
-  background-color: #4949b4;
+  background-color: #c19875;
   color: white;
 }
 
 .titulo {
   font-size: 18px;
   font-weight: bold;
-  background-color: #ffffff;
-  color: #000;
+  background-color: #fff;
+  color: #414535;
 }
 
 .hora-de-clase {
-  background-color: #d9d9d9;
+  background-color: #f2e3bc;
   font-weight: bold;
   font-size: 12px;
 }
 
 /* Celda de CTS */
 .ciencia {
-  background-color: #d1eaff;
+  background-color: #f2e3bc;
 }
 
 /* Celdas vacías */
 .vacio {
-  background-color: #d9d9d9;
+  background-color: #f5f5f5;
 }
 
 /* VESPERTINO */
 .vespertino-header {
-  background-color: #d9d9d9;
-  border: 1px solid #000;
+  background-color: #c19875;
+  border-bottom: none;
+  border-left: none;
 }
 
 .vespertino {
   writing-mode: vertical-rl;
-  text-orientation: fixed;
-  transform: rotate(180deg);
+  text-orientation: upright;
+  /*transform: rotate(180deg);*/
   font-weight: bold;
   font-size: 14px;
-  background-color: #d9d9d9;
-  color: #000;
+  background-color: #c19875;
+  color: #fff;
+  border-top: none;
 }
 
 /* Hover en celdas */
 tbody td:hover {
-  background-color: #d9d9d9;
+  background-color: #96bbbb;
   cursor: default;
-  transition: background-color 0.2s ease;
+  transition:background-color 0.2s ease;
+}
+
+/* Footer */
+
+footer {
+  background: #f5f5f5;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 0;
+  font-size: 13px;
+  color: #888;
+  margin-top: 60px;
 }
